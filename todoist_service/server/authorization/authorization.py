@@ -4,6 +4,7 @@ import string
 from flask import redirect, request, abort, make_response, url_for
 from requests_oauthlib import OAuth2Session
 
+from todoist_service.db import DB
 from .consts import *
 from .registration import register_user
 
@@ -35,7 +36,7 @@ class AuthorizationHandler:
         response.set_cookie(COOKIE_STATE, generated_state)
         return response
 
-    def handle_redirect_request(self, client):
+    def handle_redirect_request(self, client, db: DB):
         # validate state
         expected_state = request.cookies.get(COOKIE_STATE)
         if not expected_state == request.args.get(PARAM_STATE):
@@ -53,7 +54,7 @@ class AuthorizationHandler:
                                   code=parsed[PARAM_CODE])
 
         # register user to system
-        token, user_id = register_user(access_token=token[PARAM_ACCESS_TOKEN])
+        token, user_id = register_user(db=db, access_token=token[PARAM_ACCESS_TOKEN])
 
         # redirect user to the settings page
         response = redirect(url_for(".settings"))
