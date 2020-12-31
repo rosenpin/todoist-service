@@ -4,7 +4,10 @@ class TaskFields:
     Item = "item"
     Labels = "labels"
     ProjectID = "project_id"
+    Due = "due"
 
+class Due:
+    Date = "date"
 
 class ProjectFields:
     Project = "project"
