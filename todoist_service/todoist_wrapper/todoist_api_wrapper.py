@@ -21,7 +21,7 @@ class TodoistAPIWrapper(TodoistWrapper):
         return self.api.get_task(item_id)
 
     def update_task(self, task_id: str, **kwargs):
-        return self.api.update_task(task_id, kwargs)
+        return self.api.update_task(task_id, **kwargs)
 
     def add_label(self, name):
         self.api.add_label(name)
