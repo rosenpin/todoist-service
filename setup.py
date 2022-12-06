@@ -17,7 +17,7 @@ setuptools.setup(
         "Programming Language :: Python :: 3"
     ],
     install_requires=[
-        "todoist-python",
+        "todoist-api-python",
         "flask",
         "tinydb",
         "requests-oauthlib"
