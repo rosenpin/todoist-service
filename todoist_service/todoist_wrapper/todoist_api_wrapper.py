@@ -1,8 +1,5 @@
-import logging
-
 from todoist_api_python.api import TodoistAPI
 
-import todoist_service.todoist_wrapper.consts as consts
 from todoist_service.todoist_wrapper.todoist_wrapper import TodoistWrapper
 
 
@@ -22,6 +19,9 @@ class TodoistAPIWrapper(TodoistWrapper):
 
     def get_task_by_id(self, item_id):
         return self.api.get_task(item_id)
+
+    def update_task(self, task_id: str, **kwargs):
+        return self.api.update_task(task_id, kwargs)
 
     def add_label(self, name):
         self.api.add_label(name)
