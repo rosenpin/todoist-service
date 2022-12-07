@@ -4,6 +4,15 @@ from todoist_service.todoist_wrapper.todoist_wrapper import TodoistWrapper
 
 
 class TodoistAPIWrapper(TodoistWrapper):
+    def get_user_id(self):
+        t = self.api.quick_add_task("test")
+        user_id = t.task.creator_id
+        self.api.delete_task(t.task.id)
+        return user_id
+
+    def get_user_name(self):
+        return "Unknown"
+
     def __init__(self, token):
         self.api = TodoistAPI(token=token)
         self.sync()
