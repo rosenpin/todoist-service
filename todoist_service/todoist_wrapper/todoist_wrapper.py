@@ -38,3 +38,6 @@ class TodoistWrapper:
 
     def get_user_name(self):
         raise NotImplementedError()
+
+    def update_task(self, task_id: str, **kwargs):
+        raise NotImplementedError()
