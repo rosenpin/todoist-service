@@ -5,9 +5,8 @@ from todoist_service.todoist_wrapper.todoist_wrapper import TodoistWrapper
 
 class TodoistAPIWrapper(TodoistWrapper):
     def get_user_id(self):
-        t = self.api.quick_add_task("test")
+        t = self.api.quick_add_task("remove this")
         user_id = t.task.creator_id
-        self.api.delete_task(t.task.id)
         return user_id
 
     def get_user_name(self):
