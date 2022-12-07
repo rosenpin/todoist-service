@@ -14,7 +14,6 @@ class TodoistAPIWrapper(TodoistWrapper):
 
     def __init__(self, token):
         self.api = TodoistAPI(token=token)
-        self.sync()
 
     def get_all_labels(self):
         return self.api.get_labels()
@@ -32,24 +31,16 @@ class TodoistAPIWrapper(TodoistWrapper):
         return self.api.update_task(task_id, **kwargs)
 
     def add_label(self, name):
-        self.api.add_label(name)
-        self.commit()
+        return self.api.add_label(name)
 
     def get_label(self, label_id):
         return self.api.get_label(label_id)
 
     def add_project(self, name):
-        self.api.add_project(name)
-        self.commit()
+        return self.api.add_project(name)
 
     def get_project(self, project_id):
         return self.api.get_project(project_id)
 
     def get_all_projects(self):
         return self.api.get_projects()
-
-    def sync(self):
-        return
-
-    def commit(self):
-        return
