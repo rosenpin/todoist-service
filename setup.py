@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="todoist_service",
-    version="1.2",
+    version="1.3",
     author="Tomer Rosenfeld",
     author_email="mail@tomerrosenfeld.com",
     description="Provide framework for Todoist 3rd party services",
