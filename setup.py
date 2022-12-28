@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="todoist_service",
-    version="1.3",
+    version="1.4",
     author="Tomer Rosenfeld",
     author_email="mail@tomerrosenfeld.com",
     description="Provide framework for Todoist 3rd party services",
@@ -13,19 +13,12 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/rosenpin/todoist-service",
     license="Unlicense",
-    classifiers=[
-        "Programming Language :: Python :: 3"
-    ],
-    install_requires=[
-        "todoist-api-python",
-        "flask",
-        "tinydb",
-        "requests-oauthlib"
-    ],
+    classifiers=["Programming Language :: Python :: 3"],
+    install_requires=["todoist-api-python", "flask", "tinydb", "requests-oauthlib"],
     packages=[
-        'todoist_service',
-        'todoist_service.todoist_wrapper',
-        'todoist_service.server.authorization',
+        "todoist_service",
+        "todoist_service.todoist_wrapper",
+        "todoist_service.server.authorization",
     ],
-    python_requires='>=3.8',
+    python_requires=">=3.8",
 )
