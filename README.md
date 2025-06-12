@@ -1,3 +1,8 @@
+# Deprecated in favor of:
+[Todoist Plugins](https://github.com/rosenpin/todoist-plugins)
+
+
+
 # Todoist Service Library
 The purpose of this library is to provide generic support for Todoist services and extensions
 
